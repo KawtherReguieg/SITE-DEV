@@ -1,5 +1,8 @@
 name: Deploy Site
 
+permissions:
+  contents: write   # <--- IMPORTANT
+
 on:
   push:
     branches:
@@ -9,20 +12,16 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      # Checkout du dépôt complet
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      # Debug : liste tous les fichiers pour vérifier la présence du Dockerfile
       - name: List files for debug
         run: ls -R
 
-      # Build Docker image en précisant explicitement le Dockerfile
       - name: Build Docker image
         run: docker build -t monsite:latest -f ./Dockerfile .
 
-      # Test Docker container
       - name: Test Docker container
         run: |
           docker run -d -p 8081:80 --name testsite monsite:latest
