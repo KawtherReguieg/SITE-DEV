@@ -142,8 +142,14 @@ le site enligne:
 
 
 ---
+## 8.Test de Pipeline
 
-## 8. Conclusion
+j'ai fait une petite modification dans le fichier index.html
+
+![git commande](images/Pipeline-test/git-commande.png)
+![Pipeline reussite](images/Pipeline-test/Pipeline-reussite.png)
+![workflow reussite](images/Pipeline-test/workflow-reussite.png)
+## 9. Conclusion
 
 Ce projet a permis de mettre en place un workflow complet et automatisé :  
 
